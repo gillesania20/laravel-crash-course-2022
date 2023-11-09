@@ -20,23 +20,25 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Listing::create([
-            'title' => 'title one',
-            'tags' => 'tag one, tag two',
-            'company' => 'company one',
-            'location' => 'location one',
-            'email' => 'email@email.com',
-            'website' => 'website one',
-            'description' => 'description one'
-        ]);
-        Listing::create([
-            'title' => 'title two',
-            'tags' => 'tag one, tag two',
-            'company' => 'company two',
-            'location' => 'location two',
-            'email' => 'email@email.com',
-            'website' => 'website two',
-            'description' => 'description two'
-        ]);
+        // Listing::create([
+        //     'title' => 'title one',
+        //     'tags' => 'tag one, tag two',
+        //     'company' => 'company one',
+        //     'location' => 'location one',
+        //     'email' => 'email@email.com',
+        //     'website' => 'website one',
+        //     'description' => 'description one'
+        // ]);
+        // Listing::create([
+        //     'title' => 'title two',
+        //     'tags' => 'tag one, tag two',
+        //     'company' => 'company two',
+        //     'location' => 'location two',
+        //     'email' => 'email@email.com',
+        //     'website' => 'website two',
+        //     'description' => 'description two'
+        // ]);
+
+        Listing::factory(6)->create();
     }
 }
