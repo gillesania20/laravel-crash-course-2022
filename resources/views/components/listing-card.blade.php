@@ -1,9 +1,17 @@
 @props(['listing'])
+@php
+    $imgSrc = '';
+    if(gettype($listing->logo) === 'string'){
+        $imgSrc = asset('storage/' . $listing->logo);
+    }else{
+        $imgSrc = asset('images/no-image.png');
+    }
+@endphp
 <x-card>
     <div class="flex">
         <img
             class="hidden w-48 mr-6 md:block"
-            src="{{asset('images/no-image.png')}}"
+            src="{{$imgSrc}}"
             alt=""
         />
         <div>

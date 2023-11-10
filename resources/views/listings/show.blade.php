@@ -1,6 +1,14 @@
 @extends('layout')
 @section('content')
 @include('partials._search')
+@php
+    $imgSrc = '';
+    if(gettype($listing->logo) === 'string'){
+        $imgSrc = asset('storage/' . $listing->logo);
+    }else{
+        $imgSrc = asset('images/no-image.png');
+    }
+@endphp
 <a href="/" class="inline-block text-black ml-4 mb-4"
     ><i class="fa-solid fa-arrow-left"></i> Back
 </a>
@@ -11,7 +19,7 @@
         >
             <img
                 class="w-48 mr-6 mb-6"
-                src="{{asset('images/no-image.png')}}"
+                src="{{$imgSrc}}"
                 alt=""
             />
 
@@ -48,6 +56,16 @@
                 </div>
             </div>
         </div>
+    </x-card>
+    <x-card>
+        <a href="/listings/edit/{{$listing->id}}">
+            <i class="fa-solid fa-pencil"></i> Edit
+        </a>
+        <form method="POST" action="/listings/{{$listing->id}}">
+            @csrf
+            @method('DELETE')
+            <button class="text-red-500"><i class="fa-solid fa-frash"></i> Delete</button>
+        </form>
     </x-card>
 </div>
 @endsection

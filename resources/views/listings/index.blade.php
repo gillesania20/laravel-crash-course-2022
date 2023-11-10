@@ -14,4 +14,7 @@
     @endforeach
 @endif
 </div>
+<div>
+    {{$listings->links()}}
+</div>
 @endsection
