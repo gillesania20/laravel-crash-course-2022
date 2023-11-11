@@ -57,7 +57,7 @@
             </div>
         </div>
     </x-card>
-    <x-card>
+    <!-- <x-card>
         <a href="/listings/edit/{{$listing->id}}">
             <i class="fa-solid fa-pencil"></i> Edit
         </a>
@@ -66,6 +66,6 @@
             @method('DELETE')
             <button class="text-red-500"><i class="fa-solid fa-frash"></i> Delete</button>
         </form>
-    </x-card>
+    </x-card> -->
 </div>
 @endsection
